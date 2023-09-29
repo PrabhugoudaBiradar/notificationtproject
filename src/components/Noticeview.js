@@ -1,4 +1,9 @@
-import { Card, CardBody, CardHeader } from "phoenix-component-2.0/card";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CardFooter,
+} from "phoenix-component-2.0/card";
 import React from "react";
 import { Table, TableBody, TableHeader } from "phoenix-component-2.0/table";
 import {
@@ -17,90 +22,109 @@ import {
 import { Input, SelectField, TextArea } from "phoenix-component-2.0/input";
 import DatePicker from "react-datepicker2";
 import { Link } from "react-router-dom";
+import Style from "./style.module.css";
 
 import { ReactComponent as Home } from "phoenix-component-2.0/Icons/Basic/home.svg";
 const Noticeview = () => {
   return (
-    <Card>
+    <Card style={{ height: "55vh" }}>
       <CardHeader title={`Notice List - u/s 143(1)- 434236865`}></CardHeader>
-      {/* <Link
-        to="/"
-        style={{
-          textDecoration: "none",
-          alignItems: "baseline",
-          display: "flex",
-          // border: "1px solid black",
-          justifyContent: "left",
-        }}
-      >
-        {" "}
+
+      <CardBody style={{ width: "93vw", height: "85vh" }}>
+        <div>
+          <span style={{ color: "#44599c" }}>Notice Details</span>
+          {/* <div> */}
+
+          <TextArea
+            size="sm"
+            rows={4.5}
+            autoComplete="new-password"
+            // placeholder="Address"
+
+            name="address"
+            className={Style.noResize}
+            maxlength={200}
+          />
+          {/* <textArea
+          size="sm"
+          rows={4}
+          cols={15}
+          Resize="none"
+          className="noResize"
+          autoComplete="new-password"
+          // name="address"
+          //   label="Notice details"
+          style={{ resize: "none" }}
+          maxlength={200}
+        /> */}
+          {/* </div> */}
+        </div>
         <div
           style={{
             display: "flex",
-            // border: "1px solid black",
-            backgroundColor: "#fff",
-            boxShadow: "3px 2px 3px 2px #403c3c",
-            marginTop: "2vh",
-            marginLeft: "2.5vh",
-            gap: "5px",
-            paddingLeft: "5px",
-            paddingRight: "5px",
+            gap: "10vh",
+            marginBottom: "20px",
           }}
         >
-          <div style={{ position: "relative", top: "2px" }}>
-            <h4>Home</h4>
+          {/* <DatePickerField size="sm" label="Issued Date" /> */}
+          <div style={{ display: "grid", color: "#1e357d" }}>
+            <span>Issued Date</span>
+            <div style={{ display: "flex" }}>
+              <DatePicker
+                timePicker={false}
+                placeholder={"dd-mm-yyyy"}
+                inputFormat={"DD-MM-YYYY"}
+                noCurrentDate={true}
+                showTodayDateBtn={true}
+              ></DatePicker>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="15"
+                fill="#44599c"
+                viewBox="0 0 16 18"
+                style={{
+                  marginLeft: "-19px",
+                  marginTop: "3px",
+                }}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8 14.4a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm4 0a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm0-3.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm-4 0a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm5.6-9.6h-.8V.8a.8.8 0 1 0-1.6 0v.8H4.8V.8a.8.8 0 1 0-1.6 0v.8h-.8A2.4 2.4 0 0 0 0 4v11.2a2.4 2.4 0 0 0 2.4 2.4h11.2a2.4 2.4 0 0 0 2.4-2.4V4a2.4 2.4 0 0 0-2.4-2.4zm.8 13.6a.8.8 0 0 1-.8.8H2.4a.8.8 0 0 1-.8-.8V8h12.8v7.2zm0-8.8H1.6V4a.8.8 0 0 1 .8-.8h.8V4a.8.8 0 1 0 1.6 0v-.8h6.4V4a.8.8 0 1 0 1.6 0v-.8h.8a.8.8 0 0 1 .8.8v2.4zM4 11.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm0 3.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6z"
+                />
+              </svg>
+            </div>
           </div>
-          <Home fill="#5dbea9" />
+          <div style={{ display: "grid", color: "#1e357d" }}>
+            <span>Due Date</span>
+            <div style={{ display: "flex" }}>
+              <DatePicker
+                timePicker={false}
+                placeholder={"dd-mm-yyyy"}
+                inputFormat={"DD-MM-YYYY"}
+                noCurrentDate={true}
+                showTodayDateBtn={true}
+                // style={{border}}
+              ></DatePicker>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="15"
+                fill="#44599c"
+                viewBox="0 0 16 18"
+                style={{
+                  marginLeft: "-19px",
+                  marginTop: "3px",
+                }}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8 14.4a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm4 0a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm0-3.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm-4 0a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm5.6-9.6h-.8V.8a.8.8 0 1 0-1.6 0v.8H4.8V.8a.8.8 0 1 0-1.6 0v.8h-.8A2.4 2.4 0 0 0 0 4v11.2a2.4 2.4 0 0 0 2.4 2.4h11.2a2.4 2.4 0 0 0 2.4-2.4V4a2.4 2.4 0 0 0-2.4-2.4zm.8 13.6a.8.8 0 0 1-.8.8H2.4a.8.8 0 0 1-.8-.8V8h12.8v7.2zm0-8.8H1.6V4a.8.8 0 0 1 .8-.8h.8V4a.8.8 0 1 0 1.6 0v-.8h6.4V4a.8.8 0 1 0 1.6 0v-.8h.8a.8.8 0 0 1 .8.8v2.4zM4 11.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6zm0 3.2a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6z"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
-      </Link> */}
-      <div
-        style={{ marginTop: "2vh", paddingLeft: "20px", marginRight: "20px" }}
-      >
-        <span style={{ color: "#44599c" }}>Notice Details</span>
-        <div>
-          <TextArea
-            size="sm"
-            rows={3}
-            className="noResize"
-            autoComplete="new-password"
-            // name="address"
-            //   label="Notice details"
-            maxlength={200}
-          />
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          gap: "10vh",
-          marginBottom: "20px",
-          paddingLeft: "20px",
-        }}
-      >
-        {/* <DatePickerField size="sm" label="Issued Date" /> */}
-        <div style={{ display: "grid", color: "#1e357d" }}>
-          <span>Issued Date</span>
-          <DatePicker
-            timePicker={false}
-            placeholder={"dd-mm-yyyy"}
-            inputFormat={"DD-MM-YYYY"}
-            noCurrentDate={true}
-            showTodayDateBtn={true}
-          ></DatePicker>
-        </div>
-        <div style={{ display: "grid", color: "#1e357d" }}>
-          <span>Due Date</span>
-          <DatePicker
-            timePicker={false}
-            placeholder={"dd-mm-yyyy"}
-            inputFormat={"DD-MM-YYYY"}
-            noCurrentDate={true}
-            showTodayDateBtn={true}
-          ></DatePicker>
-        </div>
-      </div>
-
-      <CardBody style={{ width: "195vh" }}>
         <Table>
           <TableHeader>
             <tr>
@@ -127,9 +151,7 @@ const Noticeview = () => {
             })}
           </TableBody>
         </Table>
-      </CardBody>
-      <CardBody style={{ width: "50vh", margin: "auto" }}>
-        <Table>
+        <Table style={{ width: "50vh", margin: "auto", marginTop: "3vh" }}>
           <TableHeader>
             <tr>
               {headerNoticeView.map((item, index) => {
@@ -153,16 +175,17 @@ const Noticeview = () => {
             })}
           </TableBody>
         </Table>
-      </CardBody>
-      <div style={{ display: "flex", gap: "84%", marginLeft: "20px" }}>
-        <div>
-          <Button>Save</Button>
-        </div>
 
-        <div>
-          <Button>Close</Button>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div>
+            <Button>Save</Button>
+          </div>
+
+          <div>
+            <Button>Close</Button>
+          </div>
         </div>
-      </div>
+      </CardBody>
     </Card>
   );
 };

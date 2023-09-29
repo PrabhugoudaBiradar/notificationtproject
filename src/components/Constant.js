@@ -24,8 +24,6 @@ export const headerlist = [
   { title: "Due In 7 Days" },
   { title: "Due In 8-15 Days" },
   { title: "Due After 15 Days" },
-  { title: "Edit" },
-  { title: "View" },
 ];
 
 export const tablelist = [
@@ -70,6 +68,7 @@ export const headerNoticelist = [
   { title: "Description" },
   { title: "Current Status" },
   { title: "Edit" },
+  { title: "View" },
 ];
 
 export const tableNoticelist = [

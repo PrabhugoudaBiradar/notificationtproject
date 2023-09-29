@@ -19,7 +19,7 @@ const Menubar = () => {
   return (
     <div
       style={{
-        minWidth: "8vh",
+        minWidth: "4vw",
         boxShadow: " 0px 0px 0px 3px #e7e9eb",
         backgroundColor: "#fff",
         height: "90vh",
@@ -52,7 +52,7 @@ const Menubar = () => {
         </div>
       </CardBody> */}
 
-      <Link to="/" className={Style.prabhu}>
+      <Link to="/Dashboard" className={Style.prabhu}>
         <div
           style={{
             marginTop: "2vh",
@@ -78,7 +78,7 @@ const Menubar = () => {
           </div>
         </div>
       </Link>
-      <Link to="/noticelist" className={Style.prabhu}>
+      <Link to="/NoticeList" className={Style.prabhu}>
         <div
           style={{
             marginTop: "2vh",
@@ -100,7 +100,7 @@ const Menubar = () => {
           </div>
         </div>
       </Link>
-      <Link to="/noticedetails" className={Style.prabhu}>
+      <Link to="/NoticeDetails" className={Style.prabhu}>
         <div
           style={{
             marginTop: "2vh",
@@ -124,7 +124,7 @@ const Menubar = () => {
           </div>
         </div>
       </Link>
-      <Link to="/noticeview" className={Style.prabhu}>
+      <Link to="/NoticeView" className={Style.prabhu}>
         <div
           style={{
             marginTop: "2vh",

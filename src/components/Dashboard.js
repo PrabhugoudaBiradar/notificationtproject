@@ -15,7 +15,7 @@ const Dashboard = () => {
             <a href="">Sync notices</a>{" "}
           </span>
         </div>
-        <CardBody style={{ width: "195vh" }}>
+        <CardBody style={{ height: "55vh", width: "93vw" }}>
           <Table>
             <TableHeader>
               <tr>
@@ -42,16 +42,6 @@ const Dashboard = () => {
                     <td>{item.due7}</td>
                     <td>{item.due8}</td>
                     <td>{item.due15}</td>
-                    <td>
-                      <Link to="/noticedetails">
-                        <Edit fill="#5dbea9" />{" "}
-                      </Link>{" "}
-                    </td>
-                    <td>
-                      <Link to="/noticeview">
-                        <a>View</a>
-                      </Link>
-                    </td>
                   </tr>
                 );
               })}
@@ -79,9 +69,6 @@ const Dashboard = () => {
           </div> */}
         </CardBody>
       </Card>
-      {/* <Card>
-        <CardBody style={{ width: "150vh", height: "40vh" }}></CardBody>
-      </Card> */}
     </>
   );
 };

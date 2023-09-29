@@ -1,11 +1,13 @@
 {
   "name": "clientproject",
+  "homepage": "https://PrabhugoudaBiradar.github.io/NotificationProject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "font-awesome": "^4.7.0",
     "phoenix-component-2.0": "https://npmphoenix.s3.ap-south-1.amazonaws.com/phoenix-component-2.0-1.0.0.tgz",
     "react": "^18.2.0",
     "react-datepicker2": "^3.3.13",
@@ -17,6 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

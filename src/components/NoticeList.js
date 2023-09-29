@@ -63,7 +63,7 @@ const NoticeList = () => {
         <span>Filter panel</span>
       </div>
 
-      <CardBody style={{ width: "195vh" }}>
+      <CardBody style={{ width: "93vw" }}>
         <Table>
           <TableHeader>
             <tr>
@@ -82,7 +82,14 @@ const NoticeList = () => {
                   <td>{item.description}</td>
                   <td>{item.currentstatus}</td>
                   <td>
-                    <Edit fill="#5dbea9" />{" "}
+                    <Link to="/noticedetails">
+                      <Edit fill="#5dbea9" />{" "}
+                    </Link>{" "}
+                  </td>
+                  <td>
+                    <Link to="/noticeview">
+                      <a>View</a>
+                    </Link>
                   </td>
                 </tr>
               );

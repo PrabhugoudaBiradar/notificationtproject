@@ -83,7 +83,7 @@ const Menubar = () => {
       </CardBody> */}
 
       <Link
-        to="/"
+        to="/Dashboard"
         className={Style.prabhu}
         onClick={() => setcolorchange({ dashboard: true })}
       >

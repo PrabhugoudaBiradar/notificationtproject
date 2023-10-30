@@ -86,6 +86,7 @@ height: 30px;
   /* padding-top: 10px;
   padding-left:15px ; */
     font-size: medium;
+    /* color: aqua; */
  
 }
 /* .prabhu:hover + .hide {
@@ -142,6 +143,7 @@ Link{
 
 .icon:hover .defaultText{
   display: none;
+  
 }
 
 .defaultText{
@@ -180,4 +182,8 @@ Link{
   width: "30px";
   margin-top: "0.5vh";
   margin-left: "0.5vh";
+}
+
+.book:hover{
+color:rgb(83, 226, 226)
 }

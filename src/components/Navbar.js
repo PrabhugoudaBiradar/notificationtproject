@@ -5,13 +5,14 @@ import Style from "./style.module.css";
 import { ReactComponent as MenuBar } from "phoenix-component-2.0/Icons/Basic/bars.svg";
 const Navbar = () => {
   const location = useLocation();
-  const breadcrumb = location.pathname;
+  const breadcrumb =
+    location.pathname === "/" ? "/Dashboard" : location.pathname;
   console.log("location", location);
   return (
     <nav className={Style.nav}>
       <div style={{ flexBasis: "20%" }}>
         <div style={{ display: "flex" }}>
-          <Link to="/">
+          <Link to="/Dashboard">
             <img
               src="https://play-lh.googleusercontent.com/9oG7W_-zF7OSJ9pcmxR-jtW4m06fC-lwfhMnj-uO9C6Uu9AVH9UfBfSsG9OZTYf2QPMm"
               style={{

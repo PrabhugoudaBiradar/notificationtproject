@@ -26,6 +26,7 @@ const Noticedetails = () => {
   //     <i className="fa fa-calendar" onClick={onClick} />
   //   </div>
   // );
+
   return (
     <Card>
       <CardHeader title={`Notice List - u/s 143(1) - 434236865`}></CardHeader>
@@ -33,7 +34,7 @@ const Noticedetails = () => {
       <CardBody
         style={{
           width: "93vw",
-          height: "85vh",
+          height: "84vh",
           //overflow: "hidden"
         }}
       >
@@ -67,7 +68,10 @@ const Noticedetails = () => {
                 placeholder={"dd-mm-yyyy"}
                 inputFormat={"DD-MM-YYYY"}
                 noCurrentDate={true}
-                showTodayDateBtn={true}
+                // showTodayDateBtn={false}
+                // style={{  }}
+                autocomplete="off"
+                border="2px black solid"
               ></DatePicker>
               {/* <div> */}
 

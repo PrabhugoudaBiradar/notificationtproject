@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // icons
 // import { ReactComponent as MenuBar } from "phoenix-component-2.0/Icons/Basic/bars.svg";
 // import {
@@ -10,12 +10,42 @@ import React from "react";
 //style
 import Style from "./style.module.css";
 // import { Card, CardBody, CardHeader } from "phoenix-component-2.0/card";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as Books } from "phoenix-component-2.0/Icons/Basic/books.svg";
 import { ReactComponent as FileImg } from "phoenix-component-2.0/Icons/Basic/file-alt.svg";
 import { ReactComponent as Assessee } from "phoenix-component-2.0/Icons/Basic/chat-bubble-user.svg";
 import { ReactComponent as User } from "phoenix-component-2.0/Icons/Basic/user-circle.svg";
+import { useEffect } from "react";
 const Menubar = () => {
+  const location = useLocation();
+
+  console.log("location2", location);
+  const [colorchange, setcolorchange] = useState({
+    dashboard: false,
+    noticelist: false,
+    noticedetails: false,
+    noticeview: false,
+  });
+  // const colorChange = () => {
+  //   setcolorchange({...colorchange });
+  // };
+  useEffect(() => {
+    location.pathname === "/"
+      ? setcolorchange({ dashboard: true })
+      : location.pathname === "/NoticeList"
+      ? setcolorchange({ noticelist: true })
+      : location.pathname === "/NoticeDetails"
+      ? setcolorchange({ noticedetails: true })
+      : location.pathname === "/NoticeView"
+      ? setcolorchange({ noticeview: true })
+      : setcolorchange({
+          dashboard: false,
+          noticelist: false,
+          noticedetails: false,
+          noticeview: false,
+        });
+  }, [location.pathname]);
+
   return (
     <div
       style={{
@@ -52,7 +82,11 @@ const Menubar = () => {
         </div>
       </CardBody> */}
 
-      <Link to="/Dashboard" className={Style.prabhu}>
+      <Link
+        to="/"
+        className={Style.prabhu}
+        onClick={() => setcolorchange({ dashboard: true })}
+      >
         <div
           style={{
             marginTop: "2vh",
@@ -65,11 +99,20 @@ const Menubar = () => {
               textAlign: "center",
             }}
           >
-            <div>
-              <Books fill="#707686" />
+            <div className={Style.book}>
+              <Books
+                fill={colorchange.dashboard === true ? "#53aff2" : "#707686"}
+              />
             </div>
 
-            <span className={Style.defaultText}>143(1)(a) </span>
+            <span
+              className={Style.defaultText}
+              style={{
+                color: colorchange.dashboard === true ? "#53aff2" : "#707686",
+              }}
+            >
+              143(1)(a){" "}
+            </span>
             {Style.icon && (
               <span className={Style.text}>
                 Notice u/s <br /> 143(a)
@@ -78,7 +121,11 @@ const Menubar = () => {
           </div>
         </div>
       </Link>
-      <Link to="/NoticeList" className={Style.prabhu}>
+      <Link
+        to="/NoticeList"
+        className={Style.prabhu}
+        onClick={() => setcolorchange({ noticelist: true })}
+      >
         <div
           style={{
             marginTop: "2vh",
@@ -92,15 +139,28 @@ const Menubar = () => {
             }}
           >
             <div>
-              <FileImg fill="#707686" />
+              <FileImg
+                fill={colorchange.noticelist === true ? "#53aff2" : "#707686"}
+              />
             </div>
 
-            <span className={Style.defaultText}>133 </span>
+            <span
+              className={Style.defaultText}
+              style={{
+                color: colorchange.noticelist === true ? "#53aff2" : "#707686",
+              }}
+            >
+              133{" "}
+            </span>
             {Style.icon && <span className={Style.text}>Notice u/s 133</span>}
           </div>
         </div>
       </Link>
-      <Link to="/NoticeDetails" className={Style.prabhu}>
+      <Link
+        to="/NoticeDetails"
+        className={Style.prabhu}
+        onClick={() => setcolorchange({ noticedetails: true })}
+      >
         <div
           style={{
             marginTop: "2vh",
@@ -114,17 +174,33 @@ const Menubar = () => {
             }}
           >
             <div>
-              <Assessee fill="#707686" />
+              <Assessee
+                fill={
+                  colorchange.noticedetails === true ? "#53aff2" : "#707686"
+                }
+              />
             </div>
 
-            <span className={Style.defaultText}>143(1)</span>
+            <span
+              className={Style.defaultText}
+              style={{
+                color:
+                  colorchange.noticedetails === true ? "#53aff2" : "#707686",
+              }}
+            >
+              143(1)
+            </span>
             {Style.icon && (
               <span className={Style.text}>Notice u/s 143(1)</span>
             )}
           </div>
         </div>
       </Link>
-      <Link to="/NoticeView" className={Style.prabhu}>
+      <Link
+        to="/NoticeView"
+        className={Style.prabhu}
+        onClick={() => setcolorchange({ noticeview: true })}
+      >
         <div
           style={{
             marginTop: "2vh",
@@ -140,10 +216,19 @@ const Menubar = () => {
             }}
           >
             <div>
-              <User fill="#707686" />
+              <User
+                fill={colorchange.noticeview === true ? "#53aff2" : "#707686"}
+              />
             </div>
 
-            <span className={Style.defaultText}>139(9)</span>
+            <span
+              className={Style.defaultText}
+              style={{
+                color: colorchange.noticeview === true ? "#53aff2" : "#707686",
+              }}
+            >
+              139(9)
+            </span>
             {Style.icon && (
               <span className={Style.text}>Notice u/s 139(9)</span>
             )}

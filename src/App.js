@@ -19,7 +19,7 @@ function App() {
         {/* <Dashboard /> */}
         <div style={{ width: "100%" }}>
           <Routes>
-            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/NoticeDetails" element={<Noticedetails />} />
             <Route path="/NoticeView" element={<Noticeview />} />
             <Route path="/NoticeList" element={<NoticeList />} />

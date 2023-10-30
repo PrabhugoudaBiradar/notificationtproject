@@ -82,12 +82,12 @@ const NoticeList = () => {
                   <td>{item.description}</td>
                   <td>{item.currentstatus}</td>
                   <td>
-                    <Link to="/noticedetails">
+                    <Link to="/NoticeDetails">
                       <Edit fill="#5dbea9" />{" "}
                     </Link>{" "}
                   </td>
                   <td>
-                    <Link to="/noticeview">
+                    <Link to="/NoticeView">
                       <a>View</a>
                     </Link>
                   </td>

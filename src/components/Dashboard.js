@@ -36,7 +36,7 @@ const Dashboard = () => {
                     <td>{item.title}</td>
 
                     <td>
-                      <Link to="/noticelist">{item.overDue}</Link>
+                      <Link to="/NoticeList">{item.overDue}</Link>
                     </td>
                     <td>{item.duetoday}</td>
                     <td>{item.due7}</td>
